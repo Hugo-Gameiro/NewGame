@@ -17,7 +17,7 @@ public class Character {
 
     public Character(CharacterType characterType){
         this.characterType = characterType;
-        this.characterGfx = new CharacterGfx();
+        this.characterGfx = new CharacterGfx(characterType);
         staged = false;
         this.health = characterType.getHealth();
     }
