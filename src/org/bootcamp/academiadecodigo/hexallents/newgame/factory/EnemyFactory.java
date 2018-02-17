@@ -24,3 +24,6 @@ public class EnemyFactory {
         return null;
     }
 }
+
+ // gerar enimigos na grelha. o X = 900, sempre
+//

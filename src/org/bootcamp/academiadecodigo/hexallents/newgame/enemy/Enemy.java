@@ -15,7 +15,6 @@ public class Enemy {
     public Enemy(EnemyType enemyType){
         this.enemyType = enemyType;
         health = enemyType.getHealth();
-
     }
 
 

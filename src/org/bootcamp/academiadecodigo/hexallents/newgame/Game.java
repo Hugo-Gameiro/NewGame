@@ -25,10 +25,7 @@ public class Game{
         this.factory = new EnemyFactory();
         this.enemyGfx = new EnemyGfx(EnemyType.ENEMY_1);
         this.characterFactory = new CharacterFactory();
-
         this.characterGfx = new CharacterGfx(CharacterType.CHARACTER_1);
-
-
     }
 
 
@@ -37,7 +34,6 @@ public class Game{
         enemy = factory.getNewEnemy();
         enemyGfx.draw();
         characterGfx.draw();
-
     }
 
 
