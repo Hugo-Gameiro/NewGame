@@ -2,43 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9061ffc-0369-4ff3-aa4c-bddc1699324a" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/lib/simplegraphics.jar" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/Game.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/Main.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/Movable.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/bullet/Bullet.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/character/Character.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/character/CharacterType.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/enemy/Enemy.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/enemy/EnemyType.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/factory/CharacterFactory.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/factory/EnemyFactory.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/gfx/BulletGfx.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/gfx/CharacterGfx.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/gfx/EnemyGfx.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/grid/Grid.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/out/production/NewGame/org/bootcamp/academiadecodigo/hexallents/newgame/grid/GridGfx.class" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/res/Upside-Lawn.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/res/green_grass_by_gardek.jpg" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/res/grid.png" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Game.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Main.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Movable.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/bullet/Bullet.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/character/Character.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/character/CharacterType.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/enemy/Enemy.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/enemy/EnemyType.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/CharacterFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/EnemyFactory.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/gfx/BulletGfx.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/gfx/CharacterGfx.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/gfx/EnemyGfx.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/grid/Grid.java" />
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/grid/GridGfx.java" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/NewGame.iml" afterPath="$PROJECT_DIR$/NewGame.iml" />
+      <change beforePath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Main.java" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Main.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -50,8 +14,48 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Main.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Character.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/character/Character.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="60">
+              <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CharacterType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/character/CharacterType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyType.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/enemy/EnemyType.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="30">
+              <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="CharacterFactory.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/CharacterFactory.java">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
@@ -75,7 +79,14 @@
       </map>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Main.java" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="1920" />
     <option name="height" value="1196" />
   </component>
@@ -113,6 +124,41 @@
               <item name="NewGame" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="newgame" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NewGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NewGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="newgame" type="462c0819:PsiDirectoryNode" />
+              <item name="bullet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NewGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NewGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="newgame" type="462c0819:PsiDirectoryNode" />
+              <item name="character" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NewGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NewGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="newgame" type="462c0819:PsiDirectoryNode" />
+              <item name="enemy" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NewGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NewGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="newgame" type="462c0819:PsiDirectoryNode" />
+              <item name="factory" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NewGame" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NewGame" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="newgame" type="462c0819:PsiDirectoryNode" />
+              <item name="gfx" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -257,7 +303,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1920" height="1196" extended-state="6" />
+    <frame x="0" y="0" width="1920" height="1200" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
@@ -268,9 +314,9 @@
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32970026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32970026" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32209405" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="-1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24973376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -298,6 +344,38 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="12" column="0" lean-forward="false" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/character/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="6" column="13" lean-forward="false" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/character/CharacterType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="12" lean-forward="false" selection-start-line="2" selection-start-column="12" selection-end-line="2" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/enemy/EnemyType.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/CharacterFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
