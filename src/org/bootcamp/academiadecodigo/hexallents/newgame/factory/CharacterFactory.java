@@ -6,7 +6,8 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
 
 public class CharacterFactory {
 
-    public static Character getNewCharacter(){
+
+    public static Character getNewCharacter() {
 
         int random = (int) (Math.random() * CharacterType.values().length);
         CharacterType characterType = CharacterType.values()[random];
@@ -22,5 +23,6 @@ public class CharacterFactory {
                 return new Character(characterType);
         }
 
+        return null;
     }
 }
