@@ -35,9 +35,10 @@ public class Character {
 
         /* criamos um novo projétil e,
         ao clicar do mouse, passo sua posição:
-        (grid.makeGridPosition(getCol, getRow))*/
+        */
 
-        bullet = new Bullet();
+        //bullet = new Bullet();
+        // ao criar a bullet temos de lhe passar o x e y de forma a ser a sua origem
         return bullet;
     }
 
@@ -65,3 +66,15 @@ public class Character {
         return health;
     }
 }
+
+/**
+ *
+ * para calcular a posição em que deve ser colocado o character uma vez captado o x e y onde o player o coloca
+ *
+ *
+ *  if (x < 100){
+ *
+ *
+ *  }
+ *
+ **/

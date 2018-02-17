@@ -2,7 +2,7 @@ package org.bootcamp.academiadecodigo.hexallents.newgame.enemy;
 
 public enum  EnemyType {
 
-    ENEMY_1(1, 1, 100,100,"res/an.png", "res/an.png","res/an.png"),
+    ENEMY_1(1, 1, 850,200,"res/an.png", "res/an.png","res/an.png"),
     ENEMY_2(2, 2,0,0,"", "", ""),
     ENEMY_3(3, 3,0,0,"", "", "");
 
@@ -51,3 +51,4 @@ public enum  EnemyType {
         return enemyPictureThree;
     }
 }
+
