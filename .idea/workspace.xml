@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f9061ffc-0369-4ff3-aa4c-bddc1699324a" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Main.java" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Main.java" />
+      <change beforePath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/CharacterFactory.java" afterPath="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/CharacterFactory.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -57,6 +57,18 @@
       <file leaf-file-name="CharacterFactory.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/CharacterFactory.java">
           <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="240">
+              <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="EnemyFactory.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/EnemyFactory.java">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="30">
               <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
               <folding />
@@ -83,6 +95,7 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/Main.java" />
+        <option value="$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/CharacterFactory.java" />
       </list>
     </option>
   </component>
@@ -375,11 +388,21 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/CharacterFactory.java">
+    <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/EnemyFactory.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" lean-forward="false" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/org/bootcamp/academiadecodigo/hexallents/newgame/factory/CharacterFactory.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="22" lean-forward="true" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
