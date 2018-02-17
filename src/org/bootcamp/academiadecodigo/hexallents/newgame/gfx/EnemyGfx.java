@@ -7,9 +7,11 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.EnemyType;
 public class EnemyGfx implements Movable{
 
     private Picture[] pictures;
+    private int y;
 
     public EnemyGfx(EnemyType enemyType){
         pictures = new Picture[3];
+        this.y = getOffsetY();
 
         pictures[0] = new Picture(enemyType.getX(), enemyType.getY(), enemyType.getEnemyPictureOne());
 
@@ -31,12 +33,30 @@ public class EnemyGfx implements Movable{
 
     @Override
     public int getOffsetX() {
-        return 0;
+        return 900;
     }
 
     @Override
     public int getOffsetY() {
-        return 0;
+        y = (int) ((Math.random() * (600 - 100)) + 100) / 100;
+
+        switch (y){
+            case 1:
+                return 100;
+
+            case 2:
+                return 200;
+
+            case 3:
+                return 300;
+
+            case 4:
+                return 400;
+
+            case 5:
+                return 500;
+        }
+        return -1;
     }
 
     @Override
