@@ -30,15 +30,13 @@ public class Game{
             enemy[i] = EnemyFactory.getNewEnemy();
         }
         this.characterFactory = new CharacterFactory();
-
         this.characterGfx = new CharacterGfx(CharacterType.CHARACTER_1);
-
-
     }
 
 
     public void init() throws InterruptedException {
         grid = new GridGfx();
+<<<<<<< HEAD
         start();
         //characterGfx.draw();
 
@@ -59,6 +57,11 @@ public class Game{
                 enemy[i].move();
             }
         }
+=======
+        enemy = factory.getNewEnemy();
+        enemyGfx.draw();
+        characterGfx.draw();
+>>>>>>> 585d5b55e0d65e854baaa78b113f7e01ee4d2f2b
     }
 
 

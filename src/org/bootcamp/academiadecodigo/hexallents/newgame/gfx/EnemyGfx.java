@@ -9,6 +9,11 @@ public class EnemyGfx implements Movable{
     private Picture[] pictures;
     private int pictureNumber;
 
+    private int y;
+
+    public EnemyGfx(EnemyType enemyType){
+        pictures = new Picture[3];
+        this.y = getOffsetY();
 
     public EnemyGfx(EnemyType enemyType, int y){
         pictureNumber = 0;
@@ -37,11 +42,11 @@ public class EnemyGfx implements Movable{
     @Override
     public int getOffsetX() {
         return pictures[0].getWidth();
-    }
 
     @Override
     public int getOffsetY() {
         return pictures[0].getHeight();
+
     }
 
     @Override
