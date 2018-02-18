@@ -170,8 +170,49 @@ public class Game {
 
             for (int i = 0; i < character.length; i++){
 
-                temp = CharacterFactory.getNewCharacter(x, y);
-                temp.move();
+                if((x >= 100 && x < 900) && (y >= 100 && y < 600)) {
+                    x = ((int) (x / 100))*100;
+                    y = ((int) (y / 100))*100;
+                    temp = CharacterFactory.getNewCharacter(x, y);
+                    temp.move();
+
+                }
+
+          /*      if(x >=100 && y >= 500){
+                    temp = CharacterFactory.getNewCharacter(x, y);
+                    temp.move();
+                }
+                else if (x >= 100 && y >= 400){
+                    temp = CharacterFactory.getNewCharacter(x, y);
+                    temp.move();
+                }
+                else if (x >= 100 && y >= 300){
+                    temp = CharacterFactory.getNewCharacter(x, y);
+                    temp.move();
+                }
+                else if (x >= 100 && y >= 200){
+                    temp = CharacterFactory.getNewCharacter(x, y);
+                    temp.move();
+                }
+                else if (x >= 100 && y >= 100){
+                    temp = CharacterFactory.getNewCharacter(x, y);
+                    temp.move();
+                }
+                else if (x >= 200 && y >= 500){
+                    temp = CharacterFactory.getNewCharacter(x, y);
+                    temp.move();
+                }
+                else if (x >= 200 && y >= 400){
+                    temp = CharacterFactory.getNewCharacter(x, y);
+                    temp.move();
+                }
+                else if (x >= 200 && y >= 400){
+                    temp = CharacterFactory.getNewCharacter(x, y);
+                    temp.move();
+                }*/
+
+
+
                 return;
             }
 
