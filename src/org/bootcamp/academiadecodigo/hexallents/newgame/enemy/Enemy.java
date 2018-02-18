@@ -28,6 +28,7 @@ public class Enemy {
 
     public void move() {
         if( x < 100){
+            enemyPicture.delete();
             return;
         }
             enemyPicture.move(getXSpeed(), getYSpeed());

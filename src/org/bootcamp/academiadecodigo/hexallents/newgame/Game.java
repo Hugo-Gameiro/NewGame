@@ -1,10 +1,14 @@
 package org.bootcamp.academiadecodigo.hexallents.newgame;
 
+
 import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.Bullet;
+
+import org.academiadecodigo.simplegraphics.mouse.Mouse;
+import org.academiadecodigo.simplegraphics.mouse.MouseEvent;
+import org.academiadecodigo.simplegraphics.mouse.MouseEventType;
+import org.academiadecodigo.simplegraphics.mouse.MouseHandler;
 import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
-import org.bootcamp.academiadecodigo.hexallents.newgame.character.CharacterType;
 import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.Enemy;
-import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.EnemyType;
 import org.bootcamp.academiadecodigo.hexallents.newgame.factory.CharacterFactory;
 import org.bootcamp.academiadecodigo.hexallents.newgame.factory.EnemyFactory;
 import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.BulletGfx;
@@ -13,9 +17,7 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.EnemyGfx;
 import org.bootcamp.academiadecodigo.hexallents.newgame.grid.Grid;
 import org.bootcamp.academiadecodigo.hexallents.newgame.grid.GridGfx;
 
-import java.lang.reflect.Field;
-
-public class Game{
+public class Game {
 
     private Grid grid;
     private EnemyFactory factory;
@@ -28,13 +30,15 @@ public class Game{
     private Bullet[] bullet;
     private BulletGfx bulletGfx;
 
-    public Game(){
+   
+
+    public Game() {
         this.factory = new EnemyFactory();
-        this.enemy = new Enemy[13];
+        this.enemy = new Enemy[23];
         /*for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
         }*/
-        this.character = new Character[3];
+        this.character = new Character[1];
         this.characterFactory = new CharacterFactory();
         this.player = new Player();
         this.bullet = new Bullet[3];
@@ -53,13 +57,15 @@ public class Game{
 
     public void start() throws InterruptedException {
         int i = 0;
+        drawCharacter();
         while (true) {
             Thread.sleep(300);
             moveEnemies();
-            drawCharacter();
-            if(i < enemy.length ) {
+
+
+            if (i < enemy.length) {
                 enemy[i] = createEnemy();
-                bullet[i] = createBullet();
+                /*bullet[i] = createBullet();*/
                 i++;
             }
             moveEnemies();
@@ -67,33 +73,40 @@ public class Game{
         }
     }
 
-    private Bullet createBullet() {
+/*    private Bullet createBullet() {
 
-        return BulletGfx.getNewEnemy();
-    }
+        return BulletGfx.getNewBullet();
+    }*/
 
-    private Enemy createEnemy(){
+    private Enemy createEnemy() {
+
         return EnemyFactory.getNewEnemy();
     }
 
-    private Character createCharacter(){
+    private Character createCharacter() {
         return CharacterFactory.getNewCharacter();
     }
 
-    private void drawCharacter(){
-        for (int i = 0; i < character.length; i++){
-            character[i] = CharacterFactory.getNewCharacter();
-            character[i].draw();
+    private Character drawCharacter() {
+        for (int i = 0; i < character.length; i++) {
+
+                character[i] = CharacterFactory.getNewCharacter();
+                if(!character[i].isDeleted() ) {
+                    character[i].move();
+                }
+                return character[i];
+
         }
+        return null;
     }
 
     private void moveEnemies() throws InterruptedException {
 
-        for (int i = 0; i < enemy.length; i++){
-            if(enemy[i] == null){
+        for (int i = 0; i < enemy.length; i++) {
+            if (enemy[i] == null) {
                 continue;
             }
-            if ( !enemy[i].isDead() && enemy[i].getXSpeed() < grid.getHeight() &&
+            if (!enemy[i].isDead() && enemy[i].getXSpeed() < grid.getHeight() &&
                     enemy[i].getYSpeed() < grid.getWidth()) {
                 enemy[i].move();
             }
@@ -101,8 +114,10 @@ public class Game{
         }
     }
 
-    private void deleteCharacter(){
-
+    private void deleteCharacter() {
+        for (int i = 0; i < character.length; i++){
+            character[i].delete();
+        }
 
     }
 
@@ -120,4 +135,53 @@ public class Game{
         }
     }
 
+    private class Player implements MouseHandler {
+
+        private Mouse m;
+        private MouseEvent mouseReleased;
+        private MouseEvent mouseClicked;
+        private boolean selected;
+        private int x;
+        private int y;
+
+
+
+        public Player(){
+            this.m = new Mouse(this);
+            addEventListener();
+
+        }
+
+        void addEventListener(){
+            m.addEventListener(MouseEventType.MOUSE_CLICKED);
+        }
+
+
+        @Override
+        public void mouseClicked(MouseEvent mouseEvent) {
+            x = (int) mouseEvent.getX();
+            y = (int) mouseEvent.getY();
+
+            for (int i = 0; i < character.length; i++) {
+
+                System.out.println(character[i]);
+                if (x >= character[i].getX() && x <= character[i].getX()+100 &&
+                        y >= character[i].getY() && y < character[i].getY() + 100){ //&&!character[i].isStaged()) {
+                    character[i].delete();
+                    character[i].setDeleted();
+                    System.out.println("clicked");
+                    System.out.println(mouseEvent);
+                    return;
+                }
+                System.out.println(mouseEvent);
+                System.out.println("out");
+                return;
+            }
+        }
+
+        @Override
+        public void mouseMoved(MouseEvent mouseEvent) {
+
+        }
+    }
 }

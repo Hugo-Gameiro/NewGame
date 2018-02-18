@@ -21,9 +21,9 @@ public class BulletGfx implements Movable{
 
     }
 
-    public Bullet getNewBullet() {
+/*    public Bullet getNewBullet() {
         return newBullet;
-    }
+    }*/
 
     @Override
     public void move(int distanceX, int distanceY) {
