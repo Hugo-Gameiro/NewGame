@@ -19,7 +19,7 @@ public class Game{
     private EnemyFactory factory;
     private Enemy[] enemy;
     private EnemyGfx enemyGfx;
-    private Character character;
+    private Character[] character;
     private CharacterGfx characterGfx;
     private CharacterFactory characterFactory;
     private Player player;
