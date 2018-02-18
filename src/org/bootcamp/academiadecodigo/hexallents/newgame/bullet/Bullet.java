@@ -1,6 +1,26 @@
 package org.bootcamp.academiadecodigo.hexallents.newgame.bullet;
 
+import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
+import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.BulletGfx;
+
 public class Bullet {
+
+
+    private int x;
+    private int y;
+    private boolean crashed;
+//    private Character character;
+    private BulletType bulletType;
+    private BulletGfx bulletGfx;
+
+
+    public Bullet(Character character, BulletType bulletType){
+//        this.character = character;
+        this.bulletType = bulletType;
+        x = character.getX();
+        y = character.getY();
+        crashed = false;
+    }
 
 
 }

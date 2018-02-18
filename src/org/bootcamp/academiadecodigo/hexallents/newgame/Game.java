@@ -26,10 +26,10 @@ public class Game{
 
     public Game(){
         this.factory = new EnemyFactory();
-        this.enemy = new Enemy[2];
-        for (int i = 0; i < enemy.length; i++){
+        this.enemy = new Enemy[13];
+        /*for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
-        }
+        }*/
         this.characterFactory = new CharacterFactory();
 
         this.characterGfx = new CharacterGfx(CharacterType.CHARACTER_1);
@@ -54,16 +54,25 @@ public class Game{
             moveEnemies();
 
             characterGfx.draw();
-            if(i < enemy.length) {
-                enemy[i].move();
+            if(i < enemy.length ) {
+                enemy[i] = createEnemy();
                 i++;
             }
+            moveEnemies();
         }
     }
 
+    private Enemy createEnemy(){
+        return EnemyFactory.getNewEnemy();
+    }
+
     private void moveEnemies() throws InterruptedException {
-        for (int i = 0; i < enemy.length; i++) {
-            if (!enemy[i].isDead() && enemy[i].getXSpeed() < grid.getHeight() &&
+
+        for (int i = 0; i < enemy.length; i++){
+            if(enemy[i] == null){
+                continue;
+            }
+            if ( !enemy[i].isDead() && enemy[i].getXSpeed() < grid.getHeight() &&
                     enemy[i].getYSpeed() < grid.getWidth()) {
                 enemy[i].move();
             }
