@@ -6,24 +6,24 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.Bullet;
 import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.Enemy;
 import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.CharacterGfx;
 
-public class Character extends CharacterGfx{
+public class Character {
 
     private CharacterType characterType;
-    private CharacterGfx characterGfx;
     private int health;
     private boolean dead;
     private Bullet bullet;
     private int x;
     private int y;
-    protected boolean staged;
+    private boolean staged;
+    private boolean deleted;
     private Movable characterPicture;
 
-    public Character(CharacterType characterType){
-        super(characterType);
+    public Character(CharacterType characterType) {
         this.characterType = characterType;
-        this.characterGfx = new CharacterGfx(characterType);
+        this.characterPicture = new CharacterGfx(characterType);
         this.staged = false;
         this.health = characterType.getHealth();
+        this.deleted = false;
 
     }
 
@@ -50,25 +50,51 @@ public class Character extends CharacterGfx{
     }
 */
 
-    public void hit(Enemy enemy){
+    public void hit(Enemy enemy) {
 
- //       health -= enemy.shoot();
-        if(health <= 0){
-            dead=true;
+        //       health -= enemy.shoot();
+        if (health <= 0) {
+            dead = true;
         }
 
     }
 
+    public void move(){
+
+        characterPicture.move(1,1);
+
+    }
+/*    public void draw() {
+        if (!deleted) {
+            characterGfx.draw();
+        }
+    }*/
+
+    public void delete() {
+        characterPicture.delete();
+    }
     // GETTERS AND SETTERS
 
 
     public int getX() {
-        return x;
+        return characterType.getX();
     }
 
     public int getY() {
-        return y;
+        return characterType.getY();
     }
+
+    public int getWidth() {
+        return characterPicture.getOffsetX();
+    }
+
+    public int getHeight() {
+        return characterPicture.getOffsetY();
+    }
+
+/*    public CharacterGfx getCharacterGfx() {
+        return characterGfx;
+    }*/
 
     public int getHealth() {
         return health;
@@ -80,5 +106,31 @@ public class Character extends CharacterGfx{
 
     public boolean isStaged() {
         return staged;
+    }
+
+    public void setStaged() {
+        this.staged = true;
+    }
+
+    public boolean isDeleted() {
+        return deleted;
+    }
+
+    public void setDeleted() {
+        this.deleted = true;
+    }
+
+    @Override
+    public String toString() {
+        return "Character{" +
+                "characterType=" + characterType +
+                ", health=" + health +
+                ", dead=" + dead +
+                ", bullet=" + bullet +
+                ", x=" + x +
+                ", y=" + y +
+                ", staged=" + staged +
+                ", characterPicture=" + characterPicture +
+                '}';
     }
 }

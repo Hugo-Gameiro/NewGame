@@ -24,13 +24,15 @@ public class Game {
     private CharacterFactory characterFactory;
     private Player player;
 
+   
+
     public Game() {
         this.factory = new EnemyFactory();
         this.enemy = new Enemy[23];
         /*for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
         }*/
-        this.character = new Character[3];
+        this.character = new Character[1];
         this.characterFactory = new CharacterFactory();
         this.player = new Player();
 
@@ -48,10 +50,12 @@ public class Game {
 
     public void start() throws InterruptedException {
         int i = 0;
+        drawCharacter();
         while (true) {
             Thread.sleep(300);
             moveEnemies();
-            drawCharacter();
+
+
             if (i < enemy.length) {
                 enemy[i] = createEnemy();
                 i++;
@@ -70,9 +74,13 @@ public class Game {
 
     private Character drawCharacter() {
         for (int i = 0; i < character.length; i++) {
-            character[i] = CharacterFactory.getNewCharacter();
-            character[i].draw();
-            return character[i];
+
+                character[i] = CharacterFactory.getNewCharacter();
+                if(!character[i].isDeleted() ) {
+                    character[i].move();
+                }
+                return character[i];
+
         }
         return null;
     }
@@ -126,13 +134,19 @@ public class Game {
             y = (int) mouseEvent.getY();
 
             for (int i = 0; i < character.length; i++) {
-                if (x >= character[i].getX() + 100 && x < character[i].getX() + 200 &&
-                        y >= character[i].getY() && y < character[i].getY() + 200 && !character[i].isStaged()) {
-                    System.out.println(character[i]);
+
+                System.out.println(character[i]);
+                if (x >= character[i].getX() && x <= character[i].getX()+100 &&
+                        y >= character[i].getY() && y < character[i].getY() + 100){ //&&!character[i].isStaged()) {
+                    character[i].delete();
+                    character[i].setDeleted();
                     System.out.println("clicked");
+                    System.out.println(mouseEvent);
                     return;
                 }
+                System.out.println(mouseEvent);
                 System.out.println("out");
+                return;
             }
         }
 

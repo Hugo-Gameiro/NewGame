@@ -15,6 +15,7 @@ public class CharacterGfx implements Movable{
     @Override
     public void move(int distanceX, int distanceY) {
 
+        picture.draw();
 
     }
 
