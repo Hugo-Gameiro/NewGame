@@ -1,5 +1,7 @@
 package org.bootcamp.academiadecodigo.hexallents.newgame.character;
 
+import org.academiadecodigo.simplegraphics.pictures.Picture;
+import org.bootcamp.academiadecodigo.hexallents.newgame.Movable;
 import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.Bullet;
 import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.Enemy;
 import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.CharacterGfx;
@@ -14,13 +16,15 @@ public class Character extends CharacterGfx{
     private int x;
     private int y;
     protected boolean staged;
+    private Movable characterPicture;
 
     public Character(CharacterType characterType){
         super(characterType);
         this.characterType = characterType;
         this.characterGfx = new CharacterGfx(characterType);
-        staged = false;
+        this.staged = false;
         this.health = characterType.getHealth();
+
     }
 
     public int shoot(){
@@ -64,5 +68,13 @@ public class Character extends CharacterGfx{
 
     public int getHealth() {
         return health;
+    }
+
+    public boolean isDead() {
+        return dead;
+    }
+
+    public boolean isStaged() {
+        return staged;
     }
 }
