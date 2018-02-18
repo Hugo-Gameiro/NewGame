@@ -107,4 +107,16 @@ public class Enemy {
     public boolean isDead() {
         return dead;
     }
+
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
+
+    public void setDead() {
+        dead = true;
+    }
 }

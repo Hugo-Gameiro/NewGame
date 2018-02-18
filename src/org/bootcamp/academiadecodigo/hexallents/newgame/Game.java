@@ -67,6 +67,7 @@ public class Game {
         while (true) {
             Thread.sleep(300);
             moveEnemies();
+            detectCollision();
 
             if (i < enemy.length) {
                 enemy[i] = createEnemy();
@@ -79,9 +80,6 @@ public class Game {
             if(characterStaged){
                 moveBullets();
             }
-
-
-
 
         }
     }
@@ -144,6 +142,24 @@ public class Game {
             character[i].delete();
         }
 
+    }
+
+    private void detectCollision(){
+
+        for (int i = 0; i < enemy.length; i++) {
+            for (int j = 0; j < bullet.length; j++) {
+                if (bullet[j] == null) {
+                    return;
+                }
+
+                if (!bullet[j].isCrashed() && !enemy[i].isDead() &&
+                        (((int) (enemy[i].getX() / 100)) * 100) == (((int) (bullet[j].getX() / 100) * 100))
+                        && (int) ((enemy[i].getY() / 100) * 100) == (((int) (bullet[j].getY() / 100) * 100))) {
+                    bullet[j].crash();
+                    enemy[i].setDead();
+                }
+            }
+        }
     }
 
     private void moveBullets(){
