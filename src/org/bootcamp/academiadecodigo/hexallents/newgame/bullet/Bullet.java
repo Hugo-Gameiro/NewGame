@@ -32,6 +32,24 @@ public class Bullet {
         return y;
     }
 
+    public void move() {
+
+        if( x > 950 ){
+            return;
+        }
+        bulletPicture.move(getXSpeed(), getYSpeed());
+        x += getXSpeed();
+        y += getYSpeed();
+    }
+    public int getXSpeed(){
+        return bulletType.getxSpeed();
+    }
+
+    public int getYSpeed(){
+        return bulletType.getySpeed();
+    }
+
+
 }
 
 
