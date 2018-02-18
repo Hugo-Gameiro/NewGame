@@ -49,7 +49,13 @@ public class Bullet {
         return bulletType.getySpeed();
     }
 
+    public boolean isCrashed() {
+        return crashed;
+    }
 
+    public void setCrashed(boolean crashed) {
+        this.crashed = true;
+    }
 }
 
 
