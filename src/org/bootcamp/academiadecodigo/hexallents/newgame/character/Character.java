@@ -23,24 +23,28 @@ public class Character extends CharacterGfx{
         this.health = characterType.getHealth();
     }
 
-    public int shoot(){
+/*    public int shoot(){
 
         createBullet();
         if(staged) {
 //            bullet.move();
         }
         return characterType.getDamage();
-    }
+    }*/
 
+/*
     private Bullet createBullet(){
 
-        /* criamos um novo projétil e,
+        */
+/* criamos um novo projétil e,
         ao clicar do mouse, passo sua posição:
-        (grid.makeGridPosition(getCol, getRow))*/
+        (grid.makeGridPosition(getCol, getRow))*//*
+
 
         bullet = new Bullet();
         return bullet;
     }
+*/
 
     public void hit(Enemy enemy){
 
