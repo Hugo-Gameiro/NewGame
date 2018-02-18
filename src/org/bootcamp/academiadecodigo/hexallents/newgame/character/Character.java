@@ -19,8 +19,6 @@ public class Character {
     private boolean deleted;
     private Movable characterPicture;
 
-    private Bullet[] bullets;
-
     public Character(CharacterType characterType) {
         this.characterType = characterType;
         this.characterPicture = new CharacterGfx(characterType, this);
@@ -39,7 +37,6 @@ public class Character {
                 this.x = 300;
         }
 
-        bullets = new Bullet[100];
     }
 
     public Character(CharacterType characterType, int x, int y) {
@@ -153,19 +150,6 @@ public class Character {
 
     public CharacterType getCharacterType() {
         return characterType;
-    }
-
-    public Bullet[] getBullets() {
-        return bullets;
-    }
-
-    public void setBullets(Bullet bullet) {
-        for(int i = 0; i < bullets.length; i++){
-            if(bullets[i] == null){
-                bullets[i] = bullet;
-                return;
-        }
-        }
     }
 
     @Override
