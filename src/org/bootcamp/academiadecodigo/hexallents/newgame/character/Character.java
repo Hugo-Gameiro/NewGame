@@ -3,6 +3,7 @@ package org.bootcamp.academiadecodigo.hexallents.newgame.character;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.bootcamp.academiadecodigo.hexallents.newgame.Movable;
 import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.Bullet;
+import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.BulletType;
 import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.Enemy;
 import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.CharacterGfx;
 
@@ -24,10 +25,21 @@ public class Character {
         this.staged = false;
         this.health = characterType.getHealth();
         this.deleted = false;
+        this.y = 0;
+        switch (characterType) {
+            case CHARACTER_1:
+                this.x = 100;
+                break;
+            case CHARACTER_2:
+                this.x = 200;
+                break;
+            case CHARACTER_3:
+                this.x = 300;
+        }
 
     }
 
-    public Character(CharacterType characterType, int x, int y){
+    public Character(CharacterType characterType, int x, int y) {
         this.characterType = characterType;
         this.x = x;
         this.y = y;
@@ -37,28 +49,34 @@ public class Character {
 
     }
 
-/*    public int shoot(){
+    public Bullet shoot() {
 
-        createBullet();
-        if(staged) {
-//            bullet.move();
+        if (!isDead()) {
+
+            bullet = createBullet();
+
         }
-        return characterType.getDamage();
-    }*/
-
-/*
-    private Bullet createBullet(){
-
-        */
-/* criamos um novo projétil e,
-        ao clicar do mouse, passo sua posição:
-        (grid.makeGridPosition(getCol, getRow))*//*
-
-
-        bullet = new Bullet();
         return bullet;
     }
-*/
+
+    public void moveBullet(){
+        bullet.move();
+    }
+
+    private Bullet createBullet() {
+
+        switch (characterType) {
+            case CHARACTER_1:
+                return new Bullet(this, BulletType.BULLET_1);
+            case CHARACTER_2:
+                return new Bullet(this, BulletType.BULLET_2);
+            case CHARACTER_3:
+                return new Bullet(this, BulletType.BULLET_3);
+
+        }
+        return null;
+    }
+
 
     public void hit(Enemy enemy) {
 
@@ -69,9 +87,9 @@ public class Character {
 
     }
 
-    public void move(){
+    public void move() {
 
-        characterPicture.move(1,1);
+        characterPicture.move(1, 1);
 
     }
 /*    public void draw() {

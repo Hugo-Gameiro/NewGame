@@ -4,32 +4,32 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
 
 public enum BulletType {
 
-    BULLET_1(2, 0, "res/bulletCamNun.png", "res/bulletConcernedNun.png"),
-    BULLET_2(5, 0, "res/bulletCamNun.png", "res/bulletConcernedNun.png"),
-    BULLET_3(8, 0, "res/bulletCamNun.png", "res/bulletConcernedNun.png");
+    BULLET_1(2, 0, "res/bulletCalmNun.png", "res/bulletCalmNun.png"),
+    BULLET_2(5, 0, "res/bulletCalmNun.png", "res/bulletCalmNun.png"),
+    BULLET_3(8, 0, "res/bulletCalmNun.png", "res/bulletCalmNun.png");
 
-    private String enemyPictureOne;
-    private String enemyPictureTwo;
+    private String bulletPictureOne;
+    private String bulletPictureTwo;
 //    private String enemyPictureThree;
     private int xSpeed;
     private int ySpeed;
     private Character character;
 
 
-    BulletType(int xSpeed, int ySpeed, String enemyPictureOne, String enemyPictureTwo){
+    BulletType(int xSpeed, int ySpeed, String bulletPictureOne, String bulletPictureTwo){
         this.xSpeed = xSpeed;
         this.ySpeed = ySpeed;
-        this.enemyPictureOne = enemyPictureOne;
-        this.enemyPictureTwo = enemyPictureTwo;
-//        this.enemyPictureThree = enemyPictureThree;
+        this.bulletPictureOne = bulletPictureOne;
+        this.bulletPictureTwo = bulletPictureTwo;
+//        this.bulletPictureThree = bulletPictureThree;
     }
 
-    public String getEnemyPictureTwo() {
-        return enemyPictureTwo;
+    public String getBulletPictureTwo() {
+        return bulletPictureTwo;
     }
 
-    public String getEnemyPictureOne() {
-        return enemyPictureOne;
+    public String getBulletPictureOne() {
+        return bulletPictureOne;
     }
 
     public int getySpeed() {

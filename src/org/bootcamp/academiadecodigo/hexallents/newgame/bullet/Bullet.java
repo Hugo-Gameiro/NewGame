@@ -11,8 +11,9 @@ public class Bullet {
     private boolean crashed;
 //    private Character character;
     private BulletType bulletType;
-    private Movable bulletPicture;
+    private BulletGfx bulletGfx;
     private int bulletPosition;
+    private Movable bulletPicture;
 
 
     public Bullet(Character character, BulletType bulletType){
@@ -22,6 +23,7 @@ public class Bullet {
         y = character.getY();
         crashed = false;
         this.bulletPicture = new BulletGfx(bulletType, character);
+
     }
 
     public int getX() {
@@ -40,6 +42,7 @@ public class Bullet {
         bulletPicture.move(getXSpeed(), getYSpeed());
         x += getXSpeed();
         y += getYSpeed();
+
     }
 
     public int getXSpeed(){

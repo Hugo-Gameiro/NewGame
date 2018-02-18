@@ -32,20 +32,21 @@ public class Game {
     private BulletGfx bulletGfx;
     private CharacterType tempType;
     private Character temp;
+    private boolean characterStaged;
 
    
 
     public Game() {
         this.factory = new EnemyFactory();
-        this.enemy = new Enemy[23];
+        this.enemy = new Enemy[1];
         /*for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
         }*/
         this.character = new Character[3];
         this.characterFactory = new CharacterFactory();
         this.player = new Player();
-        this.bullet = new Bullet[3];
-
+        this.bullet = new Bullet[10000];
+        this.characterStaged = false;
 
 
     }
@@ -72,15 +73,34 @@ public class Game {
                 /*bullet[i] = createBullet();*/
                 i++;
             }
+            /*if(temp.isStaged()){
+                temp.shoot();
+            }*/
+            if(characterStaged){
+                bullet =createBullet();
+                moveBullets();
+            }
             moveEnemies();
-            moveBullets();
+
+
+
         }
     }
 
-/*    private Bullet createBullet() {
+    private Bullet[] createBullet() {
 
-        return BulletGfx.getNewBullet();
-    }*/
+        for (int j = 0; j < character.length; j++){
+            if (character[j] == null) {
+                return null;
+            }
+            for(int i = 0; i < bullet.length; i++){
+
+                bullet[i] = character[j].shoot();
+            }
+        }
+
+        return bullet;
+    }
 
     private Enemy createEnemy() {
 
@@ -127,13 +147,17 @@ public class Game {
 
     private void moveBullets(){
 
-        for (int i = 0; i < bullet.length; i++){
-            if(bullet[i] == null){
-                continue;
-            }
-            if ( !bullet[i].isCrashed() && bullet[i].getXSpeed() < grid.getHeight() &&
-                    bullet[i].getYSpeed() < grid.getWidth()) {
-                bullet[i].move();
+
+        for (int i = 0; i < character.length; i++){
+            for(int j = 0; j < bullet.length; j++){
+                if(bullet[i] == null){
+                    return;
+                }
+                if ( !bullet[i].isCrashed() && bullet[i].getXSpeed() < grid.getHeight() &&
+                        bullet[i].getYSpeed() < grid.getWidth()) {
+                    bullet[i].move();
+                }
+
             }
 
         }
@@ -175,70 +199,12 @@ public class Game {
                     y = ((int) (y / 100))*100;
                     temp = CharacterFactory.getNewCharacter(x, y);
                     temp.move();
+                    characterStaged = true;
 
                 }
-
-          /*      if(x >=100 && y >= 500){
-                    temp = CharacterFactory.getNewCharacter(x, y);
-                    temp.move();
-                }
-                else if (x >= 100 && y >= 400){
-                    temp = CharacterFactory.getNewCharacter(x, y);
-                    temp.move();
-                }
-                else if (x >= 100 && y >= 300){
-                    temp = CharacterFactory.getNewCharacter(x, y);
-                    temp.move();
-                }
-                else if (x >= 100 && y >= 200){
-                    temp = CharacterFactory.getNewCharacter(x, y);
-                    temp.move();
-                }
-                else if (x >= 100 && y >= 100){
-                    temp = CharacterFactory.getNewCharacter(x, y);
-                    temp.move();
-                }
-                else if (x >= 200 && y >= 500){
-                    temp = CharacterFactory.getNewCharacter(x, y);
-                    temp.move();
-                }
-                else if (x >= 200 && y >= 400){
-                    temp = CharacterFactory.getNewCharacter(x, y);
-                    temp.move();
-                }
-                else if (x >= 200 && y >= 400){
-                    temp = CharacterFactory.getNewCharacter(x, y);
-                    temp.move();
-                }*/
-
-
 
                 return;
             }
-
-
-           /* if(characterDeleted){
-                translateCharacter(mouseEvent);
-                characterDeleted = false;
-            }
-
-            for (int i = 0; i < character.length; i++) {
-
-                System.out.println(character[i]);
-                if (x >= character[i].getX() && x <= character[i].getX()+100 &&
-                        y >= character[i].getY() && y < character[i].getY() + 100){ //&&!character[i].isStaged()) {
-                    character[i].delete();
-                    character[i].setDeleted();
-                    characterDeleted = true;
-                    System.out.println("clicked");
-                    System.out.println(mouseEvent);
-                    tempType = character[i].getCharacterType();
-                    return;
-                }
-
-
-                return;
-            }*/
 
         }
 
