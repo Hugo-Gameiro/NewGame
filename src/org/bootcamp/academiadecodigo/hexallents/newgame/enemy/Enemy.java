@@ -20,7 +20,6 @@ public class Enemy {
         this.start = enemyType.getStart();
         this.y = enemyPositionY();
         health = enemyType.getHealth();
-<<<<<<< HEAD
         this.enemyPicture = new EnemyGfx(enemyType, y);
         this.dead = false;
 
@@ -51,8 +50,6 @@ public class Enemy {
         }
         enemyPosition = 0;
         return 470;
-=======
->>>>>>> 585d5b55e0d65e854baaa78b113f7e01ee4d2f2b
     }
 
     public int getXSpeed(){

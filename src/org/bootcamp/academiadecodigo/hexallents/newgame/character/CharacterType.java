@@ -2,13 +2,9 @@ package org.bootcamp.academiadecodigo.hexallents.newgame.character;
 
 public enum CharacterType {
 
-<<<<<<< HEAD
     CHARACTER_1(250, 300, 1, 1, "res/walk1.png"),
-=======
-    CHARACTER_1(0, 0, 1, 1, "res/an.png"),
->>>>>>> 585d5b55e0d65e854baaa78b113f7e01ee4d2f2b
     CHARACTER_2(50, 100,2, 2, ""),
-    CHARACTER_3(150, 100,3, 3, "");
+    CHARACTER_3(50, 100,3, 3, "");
 
     private String characterPicture;
     private int damage;
@@ -21,7 +17,6 @@ public enum CharacterType {
         this.x = x;
         this.y = y;
         this.damage = damage;
-        //this.health = health; tb está no character!
         this.characterPicture = characterPicture;
 
     }
