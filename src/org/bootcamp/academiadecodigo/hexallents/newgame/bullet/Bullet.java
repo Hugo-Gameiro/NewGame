@@ -6,14 +6,13 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.BulletGfx;
 
 public class Bullet {
 
-
     private int x;
     private int y;
     private boolean crashed;
 //    private Character character;
     private BulletType bulletType;
-    private BulletGfx bulletGfx;
     private Movable bulletPicture;
+    private int bulletPosition;
 
 
     public Bullet(Character character, BulletType bulletType){
@@ -22,6 +21,7 @@ public class Bullet {
         x = character.getX();
         y = character.getY();
         crashed = false;
+        this.bulletPicture = new BulletGfx(bulletType, character);
     }
 
     public int getX() {
@@ -41,6 +41,7 @@ public class Bullet {
         x += getXSpeed();
         y += getYSpeed();
     }
+
     public int getXSpeed(){
         return bulletType.getxSpeed();
     }
