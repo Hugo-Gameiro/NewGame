@@ -32,7 +32,7 @@ public class Game {
         /*for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
         }*/
-        this.character = new Character[1];
+        this.character = new Character[3];
         this.characterFactory = new CharacterFactory();
         this.player = new Player();
 
@@ -54,7 +54,6 @@ public class Game {
         while (true) {
             Thread.sleep(300);
             moveEnemies();
-
 
             if (i < enemy.length) {
                 enemy[i] = createEnemy();
