@@ -1,11 +1,13 @@
 package org.bootcamp.academiadecodigo.hexallents.newgame;
 
+import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.Bullet;
 import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
 import org.bootcamp.academiadecodigo.hexallents.newgame.character.CharacterType;
 import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.Enemy;
 import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.EnemyType;
 import org.bootcamp.academiadecodigo.hexallents.newgame.factory.CharacterFactory;
 import org.bootcamp.academiadecodigo.hexallents.newgame.factory.EnemyFactory;
+import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.BulletGfx;
 import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.CharacterGfx;
 import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.EnemyGfx;
 import org.bootcamp.academiadecodigo.hexallents.newgame.grid.Grid;
@@ -23,6 +25,8 @@ public class Game{
     private CharacterGfx characterGfx;
     private CharacterFactory characterFactory;
     private Player player;
+    private Bullet[] bullet;
+    private BulletGfx bulletGfx;
 
     public Game(){
         this.factory = new EnemyFactory();
@@ -33,6 +37,7 @@ public class Game{
         this.character = new Character[3];
         this.characterFactory = new CharacterFactory();
         this.player = new Player();
+        this.bullet = new Bullet[3];
 
     }
 
@@ -54,10 +59,17 @@ public class Game{
             drawCharacter();
             if(i < enemy.length ) {
                 enemy[i] = createEnemy();
+                bullet[i] = createBullet();
                 i++;
             }
             moveEnemies();
+            moveBullets();
         }
+    }
+
+    private Bullet createBullet() {
+
+        return BulletGfx.getNewEnemy();
     }
 
     private Enemy createEnemy(){
@@ -94,6 +106,18 @@ public class Game{
 
     }
 
+    private void moveBullets(){
 
+        for (int i = 0; i < bullet.length; i++){
+            if(bullet[i] == null){
+                continue;
+            }
+            if ( !bullet[i].isCrashed() && bullet[i].getXSpeed() < grid.getHeight() &&
+                    bullet[i].getYSpeed() < grid.getWidth()) {
+                bullet[i].move();
+            }
+
+        }
+    }
 
 }

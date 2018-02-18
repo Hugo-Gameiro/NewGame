@@ -2,6 +2,7 @@ package org.bootcamp.academiadecodigo.hexallents.newgame.gfx;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.bootcamp.academiadecodigo.hexallents.newgame.Movable;
+import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.Bullet;
 import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.BulletType;
 import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
 
@@ -18,6 +19,10 @@ public class BulletGfx implements Movable{
         pictures[1] = new Picture(character.getX()+1, character.getY()+1, bulletType.getEnemyPictureTwo());
 //        pictures[2] = new Picture(bulletType.getStart(), y, bulletType.getEnemyPictureThree());
 
+    }
+
+    public Bullet getNewBullet() {
+        return newBullet;
     }
 
     @Override
