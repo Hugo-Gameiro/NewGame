@@ -149,18 +149,20 @@ public class Game {
 
     private void moveBullets(){
 
+        for (int j = 0; j < character.length; j++) {
 
-            for(int i = 0; i < bullet.length; i++){
-                if(bullet[i] == null){
+            for (int i = 0; i < character[j].getBullets().length; i++) {
+                if (bullet[i] == null) {
                     return;
                 }
-                if ( !bullet[i].isCrashed() && bullet[i].getXSpeed() < grid.getHeight() &&
+                if (!bullet[i].isCrashed() && bullet[i].getXSpeed() < grid.getHeight() &&
                         bullet[i].getYSpeed() < grid.getWidth()) {
                     bullet[i].move();
 
 
-            }
+                }
 
+            }
         }
     }
 
@@ -199,21 +201,26 @@ public class Game {
                 if ((x >= 100 && x < 900) && (y >= 100 && y < 600)) {
                     x = ((int) (x / 100)) * 100;
                     y = ((int) (y / 100)) * 100;
-                    temp = CharacterFactory.getNewCharacter(x, y);
-                    temp.move();
+                    character[i] = CharacterFactory.getNewCharacter(x, y);
+                    character[i].move();
                     characterStaged = true;
 
                 }
                 continue;
 
             }
-            for (int i = 0; i < bullet.length; i++) {
-                if (bullet[i] == null) {
+            for (int i = 0; i < character.length; i++) {
+                bullet[i] = character[i].setBullets(character[i].shoot();
+                return;
+                /*for(int j = 0; j < character[i].getBullets().length; j++){
+                    if (bullet[j] == null) {
 
-                    bullet[i] = temp.shoot();
+                        bullet[j] = character[i].shoot();
 
-                    return;
-                }
+                        return;
+                    }*/
+
+
 
 
             }
