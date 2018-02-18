@@ -54,7 +54,7 @@ public class Character {
         if (!isDead()) {
 
             bullet = createBullet();
-
+            bullet.move();
         }
         return bullet;
     }

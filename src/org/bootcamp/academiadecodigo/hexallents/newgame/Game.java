@@ -38,7 +38,7 @@ public class Game {
 
     public Game() {
         this.factory = new EnemyFactory();
-        this.enemy = new Enemy[1];
+        this.enemy = new Enemy[5];
         /*for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
         }*/
@@ -77,16 +77,17 @@ public class Game {
                 temp.shoot();
             }*/
             if(characterStaged){
-                bullet =createBullet();
+
                 moveBullets();
             }
-            moveEnemies();
+
 
 
 
         }
     }
 
+/*
     private Bullet[] createBullet() {
 
         for (int j = 0; j < character.length; j++){
@@ -101,6 +102,7 @@ public class Game {
 
         return bullet;
     }
+*/
 
     private Enemy createEnemy() {
 
@@ -148,20 +150,20 @@ public class Game {
     private void moveBullets(){
 
 
-        for (int i = 0; i < character.length; i++){
-            for(int j = 0; j < bullet.length; j++){
+            for(int i = 0; i < bullet.length; i++){
                 if(bullet[i] == null){
                     return;
                 }
                 if ( !bullet[i].isCrashed() && bullet[i].getXSpeed() < grid.getHeight() &&
                         bullet[i].getYSpeed() < grid.getWidth()) {
                     bullet[i].move();
-                }
+
 
             }
 
         }
     }
+
 
     private class Player implements MouseHandler {
 
@@ -192,22 +194,30 @@ public class Game {
             int y = (int) mouseEvent.getY();
 
 
-            for (int i = 0; i < character.length; i++){
+            for (int i = 0; i < character.length; i++) {
 
-                if((x >= 100 && x < 900) && (y >= 100 && y < 600)) {
-                    x = ((int) (x / 100))*100;
-                    y = ((int) (y / 100))*100;
+                if ((x >= 100 && x < 900) && (y >= 100 && y < 600)) {
+                    x = ((int) (x / 100)) * 100;
+                    y = ((int) (y / 100)) * 100;
                     temp = CharacterFactory.getNewCharacter(x, y);
                     temp.move();
                     characterStaged = true;
 
                 }
+                continue;
 
-                return;
             }
+            for (int i = 0; i < bullet.length; i++) {
+                if (bullet[i] == null) {
 
+                    bullet[i] = temp.shoot();
+
+                    return;
+                }
+
+
+            }
         }
-
 
         public void translateCharacter(MouseEvent event){
 
@@ -215,7 +225,10 @@ public class Game {
             int y = (int) event.getY();
             temp = new Character(tempType, x, y);
             temp.move();
-        }
+
+
+            }
+
 
 
 
@@ -225,3 +238,5 @@ public class Game {
         }
     }
 }
+
+

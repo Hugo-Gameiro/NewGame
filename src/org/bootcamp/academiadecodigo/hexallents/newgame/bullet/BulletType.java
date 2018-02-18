@@ -4,9 +4,9 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
 
 public enum BulletType {
 
-    BULLET_1(2, 0, "res/bulletCalmNun.png", "res/bulletCalmNun.png"),
-    BULLET_2(5, 0, "res/bulletCalmNun.png", "res/bulletCalmNun.png"),
-    BULLET_3(8, 0, "res/bulletCalmNun.png", "res/bulletCalmNun.png");
+    BULLET_1(20, 0, "res/bulletCalmNun.png", "res/bulletCalmNun.png"),
+    BULLET_2(30, 0, "res/bulletCalmNun.png", "res/bulletCalmNun.png"),
+    BULLET_3(40, 0, "res/bulletCalmNun.png", "res/bulletCalmNun.png");
 
     private String bulletPictureOne;
     private String bulletPictureTwo;

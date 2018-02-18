@@ -17,7 +17,7 @@ public class BulletGfx implements Movable{
         pictures = new Picture[3];
         pictures[0] = new Picture(character.getX()+1, character.getY()+1, bulletType.getBulletPictureOne());
         pictures[1] = new Picture(character.getX()+1, character.getY()+1, bulletType.getBulletPictureTwo());
-//        pictures[2] = new Picture(bulletType.getStart(), y, bulletType.getEnemyPictureThree());
+        pictures[2] = new Picture(character.getX()+1, character.getY()+1, bulletType.getBulletPictureTwo());
 
     }
 
