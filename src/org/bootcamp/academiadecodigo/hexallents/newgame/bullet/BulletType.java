@@ -15,7 +15,6 @@ public enum BulletType {
     private int xSpeed;
     private int ySpeed;
     private Character character;
-    private Movable bulletPicture;
 
 
     BulletType(int xSpeed, int ySpeed, String enemyPictureOne, String enemyPictureTwo){
@@ -26,4 +25,19 @@ public enum BulletType {
 //        this.enemyPictureThree = enemyPictureThree;
     }
 
+    public String getEnemyPictureTwo() {
+        return enemyPictureTwo;
+    }
+
+    public String getEnemyPictureOne() {
+        return enemyPictureOne;
+    }
+
+    public int getySpeed() {
+        return ySpeed;
+    }
+
+    public int getxSpeed() {
+        return xSpeed;
+    }
 }

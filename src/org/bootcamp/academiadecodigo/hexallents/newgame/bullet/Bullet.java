@@ -1,5 +1,6 @@
 package org.bootcamp.academiadecodigo.hexallents.newgame.bullet;
 
+import org.bootcamp.academiadecodigo.hexallents.newgame.Movable;
 import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
 import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.BulletGfx;
 
@@ -12,6 +13,7 @@ public class Bullet {
 //    private Character character;
     private BulletType bulletType;
     private BulletGfx bulletGfx;
+    private Movable bulletPicture;
 
 
     public Bullet(Character character, BulletType bulletType){
@@ -22,6 +24,13 @@ public class Bullet {
         crashed = false;
     }
 
+    public int getX() {
+        return x;
+    }
+
+    public int getY() {
+        return y;
+    }
 
 }
 
