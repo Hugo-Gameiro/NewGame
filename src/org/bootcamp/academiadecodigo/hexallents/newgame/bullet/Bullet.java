@@ -9,7 +9,7 @@ public class Bullet {
     private int x;
     private int y;
     private boolean crashed;
-//    private Character character;
+    private Character character;
     private BulletType bulletType;
     private BulletGfx bulletGfx;
     private int bulletPosition;
@@ -17,7 +17,7 @@ public class Bullet {
 
 
     public Bullet(Character character, BulletType bulletType){
-//        this.character = character;
+        this.character = character;
         this.bulletType = bulletType;
         x = character.getX();
         y = character.getY();
@@ -36,12 +36,13 @@ public class Bullet {
 
     public void move() {
 
-        if( x > 950 ){
+        if( x > 800 ){
             return;
         }
-        bulletPicture.move(getXSpeed(), getYSpeed());
-        x += getXSpeed();
-        y += getYSpeed();
+            bulletPicture.move(getXSpeed(), getYSpeed());
+            x += getXSpeed();
+            y += getYSpeed();
+
 
     }
 

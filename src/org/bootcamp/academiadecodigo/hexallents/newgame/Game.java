@@ -77,7 +77,6 @@ public class Game {
                 temp.shoot();
             }*/
             if(characterStaged){
-
                 moveBullets();
             }
 
@@ -208,15 +207,13 @@ public class Game {
 
             }
             for (int i = 0; i < bullet.length; i++) {
-                if (bullet[i] == null) {
+                    if (bullet[i] == null) {
+                        bullet[i] = temp.shoot();
 
-                    bullet[i] = temp.shoot();
+                        return;
+                    }
 
-                    return;
                 }
-
-
-            }
         }
 
         public void translateCharacter(MouseEvent event){

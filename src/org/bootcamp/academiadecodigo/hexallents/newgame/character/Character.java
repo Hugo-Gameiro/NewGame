@@ -13,6 +13,7 @@ public class Character {
     private int health;
     private boolean dead;
     private Bullet bullet;
+    private int numberOfBullets;
     private int x;
     private int y;
     private boolean staged;
@@ -52,9 +53,9 @@ public class Character {
     public Bullet shoot() {
 
         if (!isDead()) {
-
             bullet = createBullet();
             bullet.move();
+
         }
         return bullet;
     }

@@ -4,9 +4,9 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.grid.GridGfx;
 
 public enum  EnemyType {
 
-    ENEMY_1(950, -2, 0,"res/walk1.png", "res/walk2.png","res/walk3.png"),
-    ENEMY_2(950, -5, 0,"res/GreenOne.png", "res/Green2.png","res/Green3.png"),
-    ENEMY_3(950, -8, 0,"res/RedOne.png", "res/Red2.png","res/Red3.png");
+    ENEMY_1(880, -2, 0,"res/walk1.png", "res/walk2.png","res/walk3.png"),
+    ENEMY_2(880, -5, 0,"res/GreenOne.png", "res/Green2.png","res/Green3.png"),
+    ENEMY_3(880, -8, 0,"res/RedOne.png", "res/Red2.png","res/Red3.png");
 
     private int damage;
     private int health;

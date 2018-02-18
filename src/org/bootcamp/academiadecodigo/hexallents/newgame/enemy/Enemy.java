@@ -27,7 +27,7 @@ public class Enemy {
     }
 
     public void move() {
-        if( x < 100){
+        if( x < 70){
             enemyPicture.delete();
             return;
         }
@@ -55,7 +55,7 @@ public class Enemy {
                 return 400;
 
             case 5:
-                return 500;
+                return 480;
         }
         return -1;
 
