@@ -19,6 +19,7 @@ public class Enemy {
         this.enemyType = enemyType;
         this.start = enemyType.getStart();
         this.y = enemyPositionY();
+        this.x = enemyType.getStart();
         health = enemyType.getHealth();
         this.enemyPicture = new EnemyGfx(enemyType, y);
         this.dead = false;
@@ -26,9 +27,12 @@ public class Enemy {
     }
 
     public void move() {
-        enemyPicture.move(getXSpeed(), getYSpeed());
-        x += getXSpeed();
-        y += getYSpeed();
+        if( x < 100){
+            return;
+        }
+            enemyPicture.move(getXSpeed(), getYSpeed());
+            x += getXSpeed();
+            y += getYSpeed();
     }
 
     public int enemyPositionY(){
@@ -51,6 +55,7 @@ public class Enemy {
         enemyPosition = 0;
         return 470;
     }
+
 
     public int getXSpeed(){
         return enemyType.getxSpeed();
