@@ -30,9 +30,8 @@ public class Game{
         /*for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
         }*/
+        this.character = new Character[3];
         this.characterFactory = new CharacterFactory();
-
-        this.characterGfx = new CharacterGfx(CharacterType.CHARACTER_1);
         this.player = new Player();
 
     }
@@ -52,8 +51,7 @@ public class Game{
         while (true) {
             Thread.sleep(300);
             moveEnemies();
-
-            characterGfx.draw();
+            drawCharacter();
             if(i < enemy.length ) {
                 enemy[i] = createEnemy();
                 i++;
@@ -64,6 +62,17 @@ public class Game{
 
     private Enemy createEnemy(){
         return EnemyFactory.getNewEnemy();
+    }
+
+    private Character createCharacter(){
+        return CharacterFactory.getNewCharacter();
+    }
+
+    private void drawCharacter(){
+        for (int i = 0; i < character.length; i++){
+            character[i] = CharacterFactory.getNewCharacter();
+            character[i].draw();
+        }
     }
 
     private void moveEnemies() throws InterruptedException {

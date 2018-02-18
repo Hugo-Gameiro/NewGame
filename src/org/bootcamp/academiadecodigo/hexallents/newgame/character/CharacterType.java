@@ -3,8 +3,8 @@ package org.bootcamp.academiadecodigo.hexallents.newgame.character;
 public enum CharacterType {
 
     CHARACTER_1(100, 0, 1, 1, "res/walk1.png"),
-    CHARACTER_2(50, 100,2, 2, ""),
-    CHARACTER_3(50, 100,3, 3, "");
+    CHARACTER_2(200, 0,2, 2, "res/walk1.png"),
+    CHARACTER_3(300, 0,3, 3, "res/walk1.png");
 
     private String characterPicture;
     private int damage;
