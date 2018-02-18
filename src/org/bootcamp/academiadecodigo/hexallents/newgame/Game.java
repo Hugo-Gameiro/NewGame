@@ -11,11 +11,13 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.EnemyGfx;
 import org.bootcamp.academiadecodigo.hexallents.newgame.grid.Grid;
 import org.bootcamp.academiadecodigo.hexallents.newgame.grid.GridGfx;
 
+import java.lang.reflect.Field;
+
 public class Game{
 
     private Grid grid;
     private EnemyFactory factory;
-    private Enemy enemy;
+    private Enemy[] enemy;
     private EnemyGfx enemyGfx;
     private Character character;
     private CharacterGfx characterGfx;
@@ -23,7 +25,10 @@ public class Game{
 
     public Game(){
         this.factory = new EnemyFactory();
-        this.enemyGfx = new EnemyGfx(EnemyType.ENEMY_1);
+        this.enemy = new Enemy[5];
+        for (int i = 0; i < enemy.length; i++){
+            enemy[i] = EnemyFactory.getNewEnemy();
+        }
         this.characterFactory = new CharacterFactory();
 
         this.characterGfx = new CharacterGfx(CharacterType.CHARACTER_1);
@@ -32,12 +37,28 @@ public class Game{
     }
 
 
-    public void init(){
+    public void init() throws InterruptedException {
         grid = new GridGfx();
-        enemy = factory.getNewEnemy();
-        enemyGfx.draw();
-        characterGfx.draw();
+        start();
+        //characterGfx.draw();
 
+
+    }
+
+    public void start() throws InterruptedException {
+        while (true) {
+            Thread.sleep(300);
+            moveEnemies();
+        }
+    }
+
+    private void moveEnemies() throws InterruptedException {
+        for (int i = 0; i < enemy.length; i++){
+            if (!enemy[i].isDead() && enemy[i].getXSpeed() < grid.getHeight() &&
+                    enemy[i].getYSpeed() <grid.getWidth()) {
+                enemy[i].move();
+            }
+        }
     }
 
 

@@ -5,9 +5,8 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.Movable;
 public class BulletGfx implements Movable{
 
 
-
     @Override
-    public void move(int distanceX) {
+    public void move(int distanceX, int distanceY) {
 
     }
 

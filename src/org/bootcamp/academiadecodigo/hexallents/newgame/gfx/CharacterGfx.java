@@ -8,30 +8,31 @@ public class CharacterGfx implements Movable{
 
     private Picture picture;
 
+
     public CharacterGfx(CharacterType characterType){
         picture = new Picture(characterType.getX(), characterType.getY(), characterType.getCharacterPictureOne());
     }
     @Override
-    public void move(int distanceX) {
+    public void move(int distanceX, int distanceY) {
+
 
     }
 
     @Override
     public int getOffsetX() {
-        return 0;
+        return picture.getWidth();
     }
 
     @Override
     public int getOffsetY() {
-        return 0;
+        return picture.getHeight();
     }
 
     @Override
     public void delete() {
-
+        picture.delete();
     }
 
-    public void draw() {
-        picture.draw();
-    }
+
+
 }

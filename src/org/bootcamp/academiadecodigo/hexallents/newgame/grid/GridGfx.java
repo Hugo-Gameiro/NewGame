@@ -9,7 +9,7 @@ public class GridGfx implements Grid {
     private Picture canvas;
 
     public GridGfx(){
-        canvas = new Picture(0,0,"res/grid.png");
+        canvas = new Picture(0,0,"res/tiles.png");
         canvas.draw();
         gridWidth = canvas.getWidth();
         gridHeight = canvas.getHeight();
@@ -26,6 +26,9 @@ public class GridGfx implements Grid {
         return gridWidth;
     }
 
+    public static int getGridWidth(){
+        return gridWidth;
+    }
     @Override
     public int getHeight() {
         return gridHeight;

@@ -4,7 +4,7 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.Bullet;
 import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.Enemy;
 import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.CharacterGfx;
 
-public class Character {
+public class Character extends CharacterGfx{
 
     private CharacterType characterType;
     private CharacterGfx characterGfx;
@@ -16,6 +16,7 @@ public class Character {
     protected boolean staged;
 
     public Character(CharacterType characterType){
+        super(characterType);
         this.characterType = characterType;
         this.characterGfx = new CharacterGfx(characterType);
         staged = false;
