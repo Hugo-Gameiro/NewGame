@@ -60,10 +60,12 @@ public class Bullet {
 
     public void setCrashed(boolean crashed) {
         this.crashed = true;
+
     }
 
     public void crash() {
         crashed = true;
+        bulletPicture.delete();
     }
 }
 

@@ -53,7 +53,6 @@ public class Character {
     public Bullet shoot() {
 
         if (!isDead()) {
-
             bullet = createBullet();
             bullet.move();
 

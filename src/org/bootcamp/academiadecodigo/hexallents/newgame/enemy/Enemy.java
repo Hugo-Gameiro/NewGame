@@ -118,5 +118,6 @@ public class Enemy {
 
     public void setDead() {
         dead = true;
+        enemyPicture.delete();
     }
 }

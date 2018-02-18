@@ -164,7 +164,6 @@ public class Game {
 
     private void moveBullets(){
 
-
             for(int i = 0; i < bullet.length; i++){
                 if(bullet[i] == null){
                     return;
@@ -172,8 +171,6 @@ public class Game {
                 if ( !bullet[i].isCrashed() && bullet[i].getXSpeed() < grid.getHeight() &&
                         bullet[i].getYSpeed() < grid.getWidth()) {
                     bullet[i].move();
-
-
             }
 
         }
