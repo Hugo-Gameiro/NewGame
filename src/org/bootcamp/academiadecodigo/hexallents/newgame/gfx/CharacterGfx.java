@@ -3,14 +3,15 @@ package org.bootcamp.academiadecodigo.hexallents.newgame.gfx;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.bootcamp.academiadecodigo.hexallents.newgame.Movable;
 import org.bootcamp.academiadecodigo.hexallents.newgame.character.CharacterType;
+import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
 
 public class CharacterGfx implements Movable{
 
     private Picture picture;
 
 
-    public CharacterGfx(CharacterType characterType){
-        picture = new Picture(characterType.getX(), characterType.getY(), characterType.getCharacterPictureOne());
+    public CharacterGfx(CharacterType characterType, Character character){
+        picture = new Picture(character.getX(), character.getY(), characterType.getCharacterPictureOne());
     }
     @Override
     public void move(int distanceX, int distanceY) {

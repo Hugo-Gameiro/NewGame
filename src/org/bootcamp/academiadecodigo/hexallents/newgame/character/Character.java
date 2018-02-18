@@ -20,8 +20,18 @@ public class Character {
 
     public Character(CharacterType characterType) {
         this.characterType = characterType;
-        this.characterPicture = new CharacterGfx(characterType);
+        this.characterPicture = new CharacterGfx(characterType, this);
         this.staged = false;
+        this.health = characterType.getHealth();
+        this.deleted = false;
+
+    }
+
+    public Character(CharacterType characterType, int x, int y){
+        this.characterType = characterType;
+        this.x = x;
+        this.y = y;
+        this.characterPicture = new CharacterGfx(characterType, this);
         this.health = characterType.getHealth();
         this.deleted = false;
 
@@ -77,11 +87,11 @@ public class Character {
 
 
     public int getX() {
-        return characterType.getX();
+        return x;
     }
 
     public int getY() {
-        return characterType.getY();
+        return y;
     }
 
     public int getWidth() {
@@ -118,6 +128,10 @@ public class Character {
 
     public void setDeleted() {
         this.deleted = true;
+    }
+
+    public CharacterType getCharacterType() {
+        return characterType;
     }
 
     @Override
