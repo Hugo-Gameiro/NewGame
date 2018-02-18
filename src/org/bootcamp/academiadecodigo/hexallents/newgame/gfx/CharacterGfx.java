@@ -18,6 +18,10 @@ public class CharacterGfx implements Movable{
 
     }
 
+    public void draw(){
+        picture.draw();
+    }
+
     @Override
     public int getOffsetX() {
         return picture.getWidth();

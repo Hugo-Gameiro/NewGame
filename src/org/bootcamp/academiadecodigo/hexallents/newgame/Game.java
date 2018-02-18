@@ -25,14 +25,13 @@ public class Game{
 
     public Game(){
         this.factory = new EnemyFactory();
-        this.enemy = new Enemy[5];
+        this.enemy = new Enemy[2];
         for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
         }
         this.characterFactory = new CharacterFactory();
 
         this.characterGfx = new CharacterGfx(CharacterType.CHARACTER_1);
-
 
     }
 
@@ -46,9 +45,15 @@ public class Game{
     }
 
     public void start() throws InterruptedException {
+        int i = 0;
         while (true) {
             Thread.sleep(300);
             moveEnemies();
+            characterGfx.draw();
+            if(i < enemy.length) {
+                enemy[i].move();
+                i++;
+            }
         }
     }
 
@@ -58,6 +63,7 @@ public class Game{
                     enemy[i].getYSpeed() <grid.getWidth()) {
                 enemy[i].move();
             }
+
         }
     }
 

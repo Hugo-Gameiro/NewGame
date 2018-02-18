@@ -2,7 +2,7 @@ package org.bootcamp.academiadecodigo.hexallents.newgame.character;
 
 public enum CharacterType {
 
-    CHARACTER_1(250, 300, 1, 1, "res/walk1.png"),
+    CHARACTER_1(100, 0, 1, 1, "res/walk1.png"),
     CHARACTER_2(50, 100,2, 2, ""),
     CHARACTER_3(50, 100,3, 3, "");
 

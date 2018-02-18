@@ -13,7 +13,7 @@ public class Enemy {
     private int y;
     private int start;
     private Movable enemyPicture;
-    private static int enemyPosition;
+    private int enemyPosition;
 
     public Enemy(EnemyType enemyType){
         this.enemyType = enemyType;
@@ -36,25 +36,52 @@ public class Enemy {
     }
 
     public int enemyPositionY(){
-       if (enemyPosition == 0){
+
+        enemyPosition = (int) ((Math.random() * (600 - 100)) + 100) / 100;
+
+
+        switch (enemyPosition){
+            case 1:
+                return 100;
+
+            case 2:
+                return 200;
+
+            case 3:
+                return 300;
+
+            case 4:
+                return 400;
+
+            case 5:
+                return 500;
+        }
+        return -1;
+
+        }
+
+/*
+
+        if (enemyPosition == 0){
             enemyPosition++;
-            return 70;
+            return 100;
         }
         if (enemyPosition == 1) {
             enemyPosition++;
-            return 170;
+            return 200;
         }
         if (enemyPosition == 2){
             enemyPosition++;
-            return 270;
+            return 300;
         }
         if (enemyPosition == 3){
             enemyPosition++;
-            return 370;
+            return 400;
         }
         enemyPosition = 0;
-        return 470;
+        return 500;
     }
+*/
 
 
     public int getXSpeed(){
