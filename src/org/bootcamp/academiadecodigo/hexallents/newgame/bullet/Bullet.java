@@ -36,7 +36,8 @@ public class Bullet {
 
     public void move() {
 
-        if( x > 800 ){
+        if( x > 850 ){
+            bulletPicture.delete();
             return;
         }
             bulletPicture.move(getXSpeed(), getYSpeed());
