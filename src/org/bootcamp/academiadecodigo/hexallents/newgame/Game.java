@@ -1,6 +1,10 @@
 package org.bootcamp.academiadecodigo.hexallents.newgame;
 
 
+import org.academiadecodigo.simplegraphics.keyboard.Keyboard;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEvent;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardEventType;
+import org.academiadecodigo.simplegraphics.keyboard.KeyboardHandler;
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.Bullet;
 
@@ -19,6 +23,8 @@ import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.EnemyGfx;
 import org.bootcamp.academiadecodigo.hexallents.newgame.grid.Grid;
 import org.bootcamp.academiadecodigo.hexallents.newgame.grid.GridGfx;
 
+import java.util.IllegalFormatCodePointException;
+
 public class Game {
 
     private Grid grid;
@@ -35,12 +41,15 @@ public class Game {
     private Character temp;
     private boolean characterStaged;
     private boolean exit;
+    private int numberOfEnemies;
+    private int level;
+    private int enemiesKilled;
+    private Menu menu;
 
    
 
-    public Game() {
+    public Game() throws InterruptedException {
         this.factory = new EnemyFactory();
-        this.enemy = new Enemy[10];
         /*for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
         }*/
@@ -50,17 +59,20 @@ public class Game {
         this.bullet = new Bullet[10000];
         this.characterStaged = false;
         this.exit = false;
-
-
+        this.numberOfEnemies = 0;
+        this.enemy = new Enemy[10];
     }
 
 
     public void init() throws InterruptedException {
         grid = new GridGfx();
-        start();
+        this.menu = new Menu();
         //characterGfx.draw();
+        //start();
         player.addEventListener();
-
+        menu.setEvents();
+        Thread.sleep(3500);
+        start();
 
     }
 
@@ -84,6 +96,7 @@ public class Game {
             if(characterStaged){
                 moveBullets();
             }
+
 
         gameOver();
         }
@@ -162,6 +175,8 @@ public class Game {
                         && ((int) (enemy[j].getY() / 100) * 100) == (((int) (bullet[i].getY() / 100) * 100))) {
                     bullet[i].crash();
                     enemy[j].setDead();
+                    enemiesKilled++;
+
                 }
             }
         }
@@ -189,12 +204,13 @@ public class Game {
             }
             if (enemy[i].getX() <= 100 && enemy[i] != null){
                 exit = true;
-            Picture gameOver = new Picture(0, 0, "res/tiles.png");
+            Picture gameOver = new Picture(0, 0, "res/gameOver.png");
             gameOver.draw();
             Thread.sleep(2000);
             }
         }
     }
+
 
     private class Player implements MouseHandler {
 
@@ -258,6 +274,55 @@ public class Game {
 
         @Override
         public void mouseMoved(MouseEvent mouseEvent) {
+
+        }
+    }
+
+    private class Menu implements KeyboardHandler{
+
+
+        private Keyboard keyboard;
+        private KeyboardEvent spaceKey;
+        private KeyboardEvent qKey;
+        private Game game;
+        private Picture menu;
+
+        public Menu() throws InterruptedException {
+            this.menu = new Picture(0,0, "res/Begin.png");
+            menu.draw();
+
+        }
+
+        public void setEvents(){
+            keyboard = new Keyboard(this);
+            spaceKey = new KeyboardEvent();
+            qKey = new KeyboardEvent();
+            spaceKey.setKey(KeyboardEvent.KEY_SPACE);
+            qKey.setKey(KeyboardEvent.KEY_Q);
+
+            spaceKey.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+            qKey.setKeyboardEventType(KeyboardEventType.KEY_PRESSED);
+
+
+            keyboard.addEventListener(qKey);
+            keyboard.addEventListener(spaceKey);
+
+        }
+
+        @Override
+        public void keyPressed(KeyboardEvent keyboardEvent) {
+
+            if (keyboardEvent.getKey() == KeyboardEvent.KEY_SPACE){
+                menu.delete();
+            }
+
+            if (keyboardEvent.getKey() == KeyboardEvent.KEY_Q){
+                    menu.draw();
+            }
+        }
+
+        @Override
+        public void keyReleased(KeyboardEvent keyboardEvent) {
 
         }
     }

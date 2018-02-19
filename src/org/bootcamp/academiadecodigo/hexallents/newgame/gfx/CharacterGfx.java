@@ -13,9 +13,9 @@ public class CharacterGfx implements Movable{
     public CharacterGfx(CharacterType characterType, Character character){
         picture = new Picture(character.getX(), character.getY(), characterType.getCharacterPictureOne());
     }
+
     @Override
     public void move(int distanceX, int distanceY) {
-
         picture.draw();
 
     }

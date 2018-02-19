@@ -9,7 +9,7 @@ public class GridGfx implements Grid {
     private Picture canvas;
 
     public GridGfx(){
-        canvas = new Picture(0,0,"res/grid2.png");
+        canvas = new Picture(0,0,"res/background.png");
         canvas.draw();
         gridWidth = canvas.getWidth();
         gridHeight = canvas.getHeight();
