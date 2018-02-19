@@ -53,7 +53,7 @@ public class Game {
         /*for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
         }*/
-        this.character = new Character[3];
+        this.character = new Character[10];
         this.characterFactory = new CharacterFactory();
         this.player = new Player();
         this.bullet = new Bullet[10000];
@@ -239,7 +239,7 @@ public class Game {
             int y = (int) mouseEvent.getY();
 
 
-            for (int i = 0; i < character.length; i++) {
+          for (int i = 0; i < character.length; i++) {
 
                 if ((x >= 100 && x < 900) && (y >= 100 && y < 600)) {
                     x = ((int) (x / 100)) * 100;

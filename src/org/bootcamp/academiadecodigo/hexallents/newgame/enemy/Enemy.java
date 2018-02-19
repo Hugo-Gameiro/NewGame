@@ -1,6 +1,7 @@
 package org.bootcamp.academiadecodigo.hexallents.newgame.enemy;
 
 import org.bootcamp.academiadecodigo.hexallents.newgame.Movable;
+import org.bootcamp.academiadecodigo.hexallents.newgame.Sound;
 import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.EnemyGfx;
 
 public class Enemy {
@@ -15,6 +16,7 @@ public class Enemy {
     private Movable enemyPicture;
     private int enemyPosition;
     private boolean exit;
+    private Sound enemySound;
 
     public Enemy(EnemyType enemyType){
         this.enemyType = enemyType;
@@ -24,7 +26,6 @@ public class Enemy {
         health = enemyType.getHealth();
         this.enemyPicture = new EnemyGfx(enemyType, y);
         this.dead = false;
-
     }
 
     public void move() {

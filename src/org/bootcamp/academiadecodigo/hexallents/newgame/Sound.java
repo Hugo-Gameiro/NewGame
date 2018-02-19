@@ -1,3 +1,4 @@
+package org.bootcamp.academiadecodigo.hexallents.newgame;
 
 import javax.sound.sampled.*;
 import java.io.File;
