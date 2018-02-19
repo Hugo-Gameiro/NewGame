@@ -1,6 +1,7 @@
 package org.bootcamp.academiadecodigo.hexallents.newgame;
 
 
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.Bullet;
 
 import org.academiadecodigo.simplegraphics.mouse.Mouse;
@@ -33,6 +34,7 @@ public class Game {
     private CharacterType tempType;
     private Character temp;
     private boolean characterStaged;
+    private boolean exit;
 
    
 
@@ -47,6 +49,7 @@ public class Game {
         this.player = new Player();
         this.bullet = new Bullet[10000];
         this.characterStaged = false;
+        this.exit = false;
 
 
     }
@@ -64,7 +67,7 @@ public class Game {
     public void start() throws InterruptedException {
         int i = 0;
     //    drawCharacter();
-        while (true) {
+        while (!exit) {
             Thread.sleep(300);
             moveEnemies();
             detectCollision();
@@ -77,10 +80,12 @@ public class Game {
             /*if(temp.isStaged()){
                 temp.shoot();
             }*/
+
             if(characterStaged){
                 moveBullets();
             }
 
+        gameOver();
         }
     }
 
@@ -162,6 +167,7 @@ public class Game {
         }
     }
 
+
     private void moveBullets(){
 
             for(int i = 0; i < bullet.length; i++){
@@ -176,6 +182,19 @@ public class Game {
         }
     }
 
+    private void gameOver() throws InterruptedException {
+        for (int i = 0; i < enemy.length; i++){
+            if (enemy[i]== null){
+                break;
+            }
+            if (enemy[i].getX() <= 100 && enemy[i] != null){
+                exit = true;
+            Picture gameOver = new Picture(0, 0, "res/tiles.png");
+            gameOver.draw();
+            Thread.sleep(2000);
+            }
+        }
+    }
 
     private class Player implements MouseHandler {
 
@@ -186,8 +205,6 @@ public class Game {
 
 
         private boolean characterDeleted;
-
-
 
 
         public Player(){
@@ -235,10 +252,7 @@ public class Game {
             int y = (int) event.getY();
             temp = new Character(tempType, x, y);
             temp.move();
-
-
             }
-
 
 
 

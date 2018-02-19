@@ -34,4 +34,12 @@ public class GridGfx implements Grid {
         return gridHeight;
     }
 
+    @Override
+    public void gameOver() throws InterruptedException {
+        Picture gameOver = new Picture(0, 0, "resources/images/menu/gameover.png");
+        gameOver.draw();
+        Thread.sleep(2000);
+
+    }
+
 }

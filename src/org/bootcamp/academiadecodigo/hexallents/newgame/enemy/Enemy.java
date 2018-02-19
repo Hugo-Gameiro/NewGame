@@ -14,6 +14,7 @@ public class Enemy {
     private int start;
     private Movable enemyPicture;
     private int enemyPosition;
+    private boolean exit;
 
     public Enemy(EnemyType enemyType){
         this.enemyType = enemyType;

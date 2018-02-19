@@ -36,7 +36,7 @@ public class Bullet {
 
     public void move() {
 
-        if( x > 850 ){
+        if( x > 820){
             bulletPicture.delete();
             return;
         }

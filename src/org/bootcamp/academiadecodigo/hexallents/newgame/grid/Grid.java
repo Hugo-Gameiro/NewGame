@@ -7,4 +7,6 @@ public interface Grid {
     int getWidth();
     int getHeight();
 
+    void gameOver() throws InterruptedException;
+
 }
