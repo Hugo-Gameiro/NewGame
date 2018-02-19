@@ -46,6 +46,10 @@ public class Game {
     private int enemiesKilled;
     private Menu menu;
     private Sound sound;
+    private Sound gameOverSound;
+
+
+
 
    
 
@@ -61,8 +65,10 @@ public class Game {
         this.characterStaged = false;
         this.exit = false;
         this.numberOfEnemies = 0;
-        this.enemy = new Enemy[10];
-        this.sound = new Sound("res/aladdin_problem.wav");
+        this.enemy = new Enemy[20];
+        this.sound = new Sound("/res/tetrisSong.wav");
+        this.gameOverSound = new Sound("/res/gameOverSound.wav");
+
     }
 
 
@@ -72,10 +78,10 @@ public class Game {
         //characterGfx.draw();
         //start();
         player.addEventListener();
+        sound.play(true);
         menu.setEvents();
         Thread.sleep(3500);
         start();
-        sound.play(true);
 
 
     }
@@ -244,6 +250,7 @@ public class Game {
                 exit = true;
             Picture gameOver = new Picture(0, 0, "res/gameOver.png");
             gameOver.draw();
+            gameOverSound.play(true);
             Thread.sleep(2000);
             }
 
