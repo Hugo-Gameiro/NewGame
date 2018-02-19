@@ -38,7 +38,7 @@ public class Game {
 
     public Game() {
         this.factory = new EnemyFactory();
-        this.enemy = new Enemy[5];
+        this.enemy = new Enemy[10];
         /*for (int i = 0; i < enemy.length; i++){
             enemy[i] = EnemyFactory.getNewEnemy();
         }*/
@@ -146,17 +146,17 @@ public class Game {
 
     private void detectCollision(){
 
-        for (int i = 0; i < enemy.length; i++) {
-            for (int j = 0; j < bullet.length; j++) {
-                if (bullet[j] == null) {
+        for (int i = 0; i < bullet.length; i++) {
+            for (int j = 0; j < enemy.length; j++) {
+                if (bullet[i] == null || enemy[j] == null) {
                     return;
                 }
 
-                if (!bullet[j].isCrashed() && !enemy[i].isDead() &&
-                        (((int) (enemy[i].getX() / 100)) * 100) == (((int) (bullet[j].getX() / 100) * 100))
-                        && (int) ((enemy[i].getY() / 100) * 100) == (((int) (bullet[j].getY() / 100) * 100))) {
-                    bullet[j].crash();
-                    enemy[i].setDead();
+                if (!bullet[i].isCrashed() && !enemy[j].isDead() &&
+                        (((int) (enemy[j].getX() / 100)) * 100) == (((int) (bullet[i].getX() / 100) * 100))
+                        && ((int) (enemy[j].getY() / 100) * 100) == (((int) (bullet[i].getY() / 100) * 100))) {
+                    bullet[i].crash();
+                    enemy[j].setDead();
                 }
             }
         }

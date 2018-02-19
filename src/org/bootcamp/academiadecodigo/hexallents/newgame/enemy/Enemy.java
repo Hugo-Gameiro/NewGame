@@ -38,7 +38,7 @@ public class Enemy {
 
     public int enemyPositionY(){
 
-        enemyPosition = (int) ((Math.random() * (600 - 100)) + 100) / 100;
+        enemyPosition = ((int) ((Math.random() * (600 - 100)) + 100) / 100);
 
 
         switch (enemyPosition){
@@ -55,7 +55,7 @@ public class Enemy {
                 return 400;
 
             case 5:
-                return 480;
+                return 500;
         }
         return -1;
 
