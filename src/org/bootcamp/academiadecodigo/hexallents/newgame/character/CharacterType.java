@@ -3,7 +3,7 @@ package org.bootcamp.academiadecodigo.hexallents.newgame.character;
 public enum CharacterType {
 
     CHARACTER_1(1, 1, "res/blackJesus.png"),
-    CHARACTER_2(2, 2, "res/God_animation.png"),
+    CHARACTER_2(2, 2, "res/blackJesus.png"),
     CHARACTER_3(3, 3, "res/blackJesus.png");
 
     private String characterPicture;

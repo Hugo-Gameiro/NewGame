@@ -45,6 +45,7 @@ public class Game {
     private int level;
     private int enemiesKilled;
     private Menu menu;
+    private Sound sound;
 
    
 
@@ -61,6 +62,7 @@ public class Game {
         this.exit = false;
         this.numberOfEnemies = 0;
         this.enemy = new Enemy[10];
+        this.sound = new Sound("res/aladdin_problem.wav");
     }
 
 
@@ -73,6 +75,8 @@ public class Game {
         menu.setEvents();
         Thread.sleep(3500);
         start();
+        sound.play(true);
+
 
     }
 
@@ -95,6 +99,8 @@ public class Game {
 
             if(characterStaged){
                 moveBullets();
+                dectectEnemyCollision();
+     //           shoot();
             }
 
 
@@ -182,6 +188,38 @@ public class Game {
         }
     }
 
+    private void dectectEnemyCollision(){
+        for (int i = 0; i < enemy.length; i++) {
+            System.out.println("   " + enemy[i]);
+            for (int j = 0; j < character.length; j++) {
+                if (enemy[i] == null || character[j] == null) {
+                    return;
+                }
+
+                if (!enemy[i].isDead() )
+                    if(!character[j].isDead() &&
+                            (((int) (enemy[i].getX() / 100)) * 100) == (((int) (character[j].getX() / 100) * 100))
+                            && ((int) (enemy[i].getY() / 100) * 100) == (((int) (character[j].getY() / 100) * 100))) {
+                        System.out.println("entrou    " + character[j]);
+                        character[j].setDead();
+                    }
+            }
+        }
+    }
+
+    private void shoot(){
+
+        for (int j = 0; j < character.length; j++) {
+
+            for (int i = 0; i < character[j].getBullets().length; i++) {
+                if(bullet[i] == null) {
+                    System.out.println(bullet.length);
+                    bullet[i] = character[j].shoot();
+                    break;
+                }
+            }
+        }
+    }
 
     private void moveBullets(){
 
@@ -208,6 +246,21 @@ public class Game {
             gameOver.draw();
             Thread.sleep(2000);
             }
+
+            if (enemy[0].isDead()){
+                for (int j = 1; j < enemy.length; j++){
+                    if (!enemy[j].isDead()){
+                        break;
+                    }
+
+                    if (enemy[j].isDead()){
+                    Picture wonGame = new Picture(0,0, "res/weWin.png");
+                    wonGame.draw();
+                    Thread.sleep(2000);
+
+                    }
+                }
+            }
         }
     }
 
@@ -233,35 +286,37 @@ public class Game {
             m.addEventListener(MouseEventType.MOUSE_CLICKED);
         }
 
-        @Override
         public void mouseClicked(MouseEvent mouseEvent) {
             int x = (int) mouseEvent.getX();
             int y = (int) mouseEvent.getY();
 
 
-          for (int i = 0; i < character.length; i++) {
+            for (int i = 0; i < character.length; i++) {
 
                 if ((x >= 100 && x < 900) && (y >= 100 && y < 600)) {
                     x = ((int) (x / 100)) * 100;
                     y = ((int) (y / 100)) * 100;
-                    temp = CharacterFactory.getNewCharacter(x, y);
-                    temp.move();
+                    character[i] = CharacterFactory.getNewCharacter(x, y);
+                    character[i].move();
                     characterStaged = true;
 
                 }
-                continue;
+
 
             }
-            for (int i = 0; i < bullet.length; i++) {
-                    if (bullet[i] == null) {
-                        bullet[i] = temp.shoot();
+            for (int i = 0; i < character.length; i++) {
+                for (int j = 0; j < character[i].getBullets().length; j++) {
+                    if (bullet[j] == null) {
+
+                        bullet[j] = character[i].shoot();
 
                         return;
                     }
 
-                }
-        }
 
+                }
+            }
+        }
         public void translateCharacter(MouseEvent event){
 
             int x = (int) event.getX();

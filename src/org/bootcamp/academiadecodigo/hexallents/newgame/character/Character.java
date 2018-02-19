@@ -20,6 +20,8 @@ public class Character {
     private boolean deleted;
     private Movable characterPicture;
 
+    private Bullet[] bullets;
+
     public Character(CharacterType characterType) {
         this.characterType = characterType;
         this.characterPicture = new CharacterGfx(characterType, this);
@@ -47,7 +49,7 @@ public class Character {
         this.characterPicture = new CharacterGfx(characterType, this);
         this.health = characterType.getHealth();
         this.deleted = false;
-
+        this.bullets = new Bullet[1000];
     }
 
     public Bullet shoot() {
@@ -165,5 +167,14 @@ public class Character {
                 ", staged=" + staged +
                 ", characterPicture=" + characterPicture +
                 '}';
+    }
+
+    public Bullet[] getBullets() {
+        return bullets;
+    }
+
+    public void setDead() {
+        dead = true;
+        characterPicture.delete();
     }
 }
