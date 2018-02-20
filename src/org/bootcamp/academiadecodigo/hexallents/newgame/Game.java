@@ -48,11 +48,6 @@ public class Game {
     private Sound sound;
     private Sound gameOverSound;
 
-
-
-
-   
-
     public Game() throws InterruptedException {
         this.factory = new EnemyFactory();
         /*for (int i = 0; i < enemy.length; i++){
