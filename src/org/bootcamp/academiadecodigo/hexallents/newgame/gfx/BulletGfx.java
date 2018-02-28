@@ -2,53 +2,44 @@ package org.bootcamp.academiadecodigo.hexallents.newgame.gfx;
 
 import org.academiadecodigo.simplegraphics.pictures.Picture;
 import org.bootcamp.academiadecodigo.hexallents.newgame.Movable;
-import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.Bullet;
 import org.bootcamp.academiadecodigo.hexallents.newgame.bullet.BulletType;
-import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
 
-public class BulletGfx implements Movable{
+public class BulletGfx implements Movable {
 
+    private Picture picture;
 
-    private Picture[] pictures;
-    private int pictureNumber;
-
-    public BulletGfx(BulletType bulletType, Character character){
-        pictureNumber = 0;
-        pictures = new Picture[3];
-        pictures[0] = new Picture(character.getX()+1, character.getY()+1, bulletType.getBulletPictureOne());
-        pictures[1] = new Picture(character.getX()+1, character.getY()+1, bulletType.getBulletPictureTwo());
-        pictures[2] = new Picture(character.getX()+1, character.getY()+1, bulletType.getBulletPictureTwo());
-
+    public BulletGfx(int x, int y, BulletType bulletType) {
+        picture = new Picture(x + 100, y, bulletType.getBulletPicturePath());
+        picture.draw();
     }
-
-/*    public Bullet getNewBullet() {
-        return newBullet;
-    }*/
 
     @Override
     public void move(int distanceX, int distanceY) {
-
-        pictures[pictureNumber].delete();
-        pictureNumber = pictureNumber == pictures.length - 1 ? 0 : ++pictureNumber;
-        pictures[pictureNumber].translate(distanceX*pictures.length, distanceY);
-        pictures[pictureNumber].draw();
-
+        picture.translate(distanceX, distanceY);
+        System.out.println(getX());
+        System.out.println(getY());
     }
 
     @Override
-    public int getOffsetX() {
-        return pictures[0].getWidth();
+    public int getWidth() {
+        return picture.getWidth();
     }
 
     @Override
-    public int getOffsetY() {
-        return pictures[0].getHeight();
+    public int getHeight() {
+        return picture.getHeight();
     }
 
     @Override
     public void delete() {
-        for(Picture p: pictures){
-            p.delete();
-        }
+        picture.delete();
+    }
+
+    public int getX() {
+        return picture.getX();
+    }
+
+    public int getY() {
+        return picture.getY();
     }
 }

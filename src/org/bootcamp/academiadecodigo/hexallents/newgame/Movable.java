@@ -4,9 +4,9 @@ public interface Movable {
 
     void move(int distanceX, int distanceY);
 
-    int getOffsetX();
+    int getWidth();
 
-    int getOffsetY();
+    int getHeight();
 
     void delete();
 }

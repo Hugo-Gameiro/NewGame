@@ -1,12 +1,21 @@
 package org.bootcamp.academiadecodigo.hexallents.newgame.grid;
 
-public interface Grid {
+import org.academiadecodigo.simplegraphics.pictures.Picture;
 
-    void init();
+public class Grid {
 
-    int getWidth();
-    int getHeight();
+    private Picture canvas;
 
-    void gameOver() throws InterruptedException;
+    public Grid() {
+        canvas = new Picture(0, 0, "res/background.png");
+        canvas.draw();
+    }
 
+    public int getWidth() {
+        return canvas.getWidth();
+    }
+
+    public int getHeight() {
+        return canvas.getHeight();
+    }
 }

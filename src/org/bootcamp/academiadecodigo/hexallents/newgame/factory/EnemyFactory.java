@@ -2,25 +2,14 @@ package org.bootcamp.academiadecodigo.hexallents.newgame.factory;
 
 import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.Enemy;
 import org.bootcamp.academiadecodigo.hexallents.newgame.enemy.EnemyType;
+import org.bootcamp.academiadecodigo.hexallents.newgame.grid.Grid;
 
 public class EnemyFactory {
 
-    public static Enemy getNewEnemy() {
-
+    public static Enemy getNewEnemy(Grid grid) {
         int random = (int) (Math.random() * EnemyType.values().length);
         EnemyType enemyType = EnemyType.values()[random];
 
-        switch (enemyType) {
-            case ENEMY_1:
-                return new Enemy(enemyType);
-
-            case ENEMY_2:
-                return new Enemy(enemyType);
-
-            case ENEMY_3:
-                return new Enemy(enemyType);
-        }
-
-        return null;
+        return new Enemy(enemyType, grid);
     }
 }

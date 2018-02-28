@@ -1,130 +1,55 @@
 package org.bootcamp.academiadecodigo.hexallents.newgame.bullet;
 
-import org.bootcamp.academiadecodigo.hexallents.newgame.Movable;
-import org.bootcamp.academiadecodigo.hexallents.newgame.character.Character;
+import org.bootcamp.academiadecodigo.hexallents.newgame.Collidable;
 import org.bootcamp.academiadecodigo.hexallents.newgame.gfx.BulletGfx;
+import org.bootcamp.academiadecodigo.hexallents.newgame.grid.Grid;
 
-public class Bullet {
+public class Bullet implements Collidable {
 
-    private int x;
-    private int y;
-    private boolean crashed;
-    private Character character;
     private BulletType bulletType;
-    private BulletGfx bulletGfx;
-    private int bulletPosition;
-    private Movable bulletPicture;
+    private BulletGfx bulletPicture;
+    private Grid grid;
 
 
-    public Bullet(Character character, BulletType bulletType){
-        this.character = character;
+    public Bullet(int x, int y, BulletType bulletType, Grid grid) {
         this.bulletType = bulletType;
-        x = character.getX();
-        y = character.getY();
-        crashed = false;
-        this.bulletPicture = new BulletGfx(bulletType, character);
-
-    }
-
-    public int getX() {
-        return x;
-    }
-
-    public int getY() {
-        return y;
+        this.bulletPicture = new BulletGfx(x + 1, y + 1, bulletType);
+        this.grid = grid;
     }
 
     public void move() {
-
-        if( x > 820){
+        if (getX() > 820) {
             bulletPicture.delete();
             return;
         }
-            bulletPicture.move(getXSpeed(), getYSpeed());
-            x += getXSpeed();
-            y += getYSpeed();
-
-
+        bulletPicture.move(getXSpeed(), getYSpeed());
     }
 
-    public int getXSpeed(){
+    @Override
+    public boolean isOutOfBounds() {
+        return getX() > grid.getWidth() || getY() > grid.getHeight();
+    }
+
+    @Override
+    public double getX() {
+        return bulletPicture.getX();
+    }
+
+    @Override
+    public double getY() {
+        return bulletPicture.getY();
+    }
+
+    public int getXSpeed() {
         return bulletType.getxSpeed();
     }
 
-    public int getYSpeed(){
+    public int getYSpeed() {
         return bulletType.getySpeed();
     }
 
-    public boolean isCrashed() {
-        return crashed;
-    }
-
-    public void setCrashed(boolean crashed) {
-        this.crashed = true;
-
-    }
-
-    public void crash() {
-        crashed = true;
+    @Override
+    public void die() {
         bulletPicture.delete();
     }
 }
-
-
-
-
-
-/**
-
-y = (int) ((Math.random() * (600 - 100)) + 100) / 100;
-
-        switch (y){
-        case 1:
-        return 100;
-
-        case 2:
-        return 200;
-
-        case 3:
-        return 300;
-
-        case 4:
-        return 400;
-
-        case 5:
-        return 500;
-        }
-        return -1;
-
-
-
-
-
- y = (int) ((Math.random() * (600 - 100)) + 100) / 100;
-
- switch (y){
- case 1:
- return 100;
-
- case 2:
- return 200;
-
- case 3:
- return 300;
-
- case 4:
- return 400;
-
- case 5:
- return 500;
- }
- return -1;
-
-
-
-
-
-**/
-
-
-
